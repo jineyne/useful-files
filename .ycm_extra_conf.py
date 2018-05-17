@@ -36,8 +36,6 @@ import ycm_core
 def DirectoryOfThisScript():
     return os.path.dirname(os.path.abspath(__file__))
 
-compilation_database_folder = DirectoryOfThisScript()
-
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
@@ -102,7 +100,7 @@ if platform.system() != 'Windows':
 #
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
-compilation_database_folder = ''
+compilation_database_folder = DirectoryOfThisScript()
 
 if os.path.exists( compilation_database_folder ):
   database = ycm_core.CompilationDatabase( compilation_database_folder )
